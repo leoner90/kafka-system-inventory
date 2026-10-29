@@ -14,11 +14,11 @@ This project is part of a system split into three separate repositories:
 
 
 
-\- \*\*\[Order Service](https://github.com/leoner90/kafka-system-order)\*\* — Entry point of the system. Handles order creation and status updates.
+- **[Order Service](https://github.com/leoner90/kafka-system-order)** — Entry point of the system. Handles order creation and status updates.
 
-\- \*\*\[Inventory Service](https://github.com/leoner90/kafka-system-inventory)\*\* — Manages product stock and availability.
+- **[Inventory Service](https://github.com/leoner90/kafka-system-inventory)** — Manages product stock and availability.
 
-\- \*\*\[Notification Service](https://github.com/leoner90/kafka-system-notification)\*\* — Sends email notifications based on Kafka events.
+- **[Notification Service](https://github.com/leoner90/kafka-system-notification)** — Sends email notifications based on Kafka events.
 
 
 
