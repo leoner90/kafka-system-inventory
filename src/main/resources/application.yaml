@@ -1,0 +1,27 @@
+# BASE
+spring:
+  application:
+    name: inventory-service
+  config:
+    import: "file:.env[.properties]"
+
+  main:
+    web-application-type: none
+
+  # DB SETUP
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/inventory_db?createDatabaseIfNotExist=true
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  # KAFKA
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: inventory-service
+      auto-offset-reset: earliest
