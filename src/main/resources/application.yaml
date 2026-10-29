@@ -24,4 +24,12 @@ spring:
     bootstrap-servers: localhost:9092
     consumer:
       group-id: inventory-service
-      auto-offset-reset: earliest
+      auto-offset-reset: earliest # //Read oldest retained msg
+
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JacksonJsonDeserializer
+      properties:
+        # //Tells the Kafka consumer which Java class to create when converting an incoming JSON message into an object.
+        spring.json.value.default.type: com.order.inventoryservice.kafka.event.OrderCreatedEvent
+        # Prevent Java class metadata in Kafka headers. consumers use their own event classes.
+        spring.json.use.type.headers: false
